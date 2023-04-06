@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world! @i</h1>
+<h1>@Coordinates</h1>
+<h1>@hello</h1>
+
+<img src="images/black_box.png" @onmousemove="@Mouse_Move">
+
+@code{
+    int i = 8; //hi 
+    private string Coordinates="";
+    private string imgUrl = "~/Assets/black_box.png";
+
+    protected void Mouse_Move(MouseEventArgs e){
+        i = 6;
+        Coordinates = $"X = {e.ClientX } Y = {e.ClientY}";
+    }
+}
